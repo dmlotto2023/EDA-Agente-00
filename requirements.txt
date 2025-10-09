@@ -3,3 +3,10 @@ pandas
 plotly
 google-generativeai
 python-dotenv
+tabulate
+fpdf2
+matplotlib
+numpy
+seaborn
+os
+json
