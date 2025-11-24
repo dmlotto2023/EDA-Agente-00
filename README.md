@@ -1,7 +1,3 @@
-Perfeito, Daniel! Vou te entregar um **README.md completo** para o seu projeto, já formatado em Markdown, pronto para colocar no repositório e rodar no **VS Code**. Ele cobre instalação, configuração, execução e até dicas de uso.
-
----
-
 # 🧠 Agente EDA Interativo com Memória (Streamlit + Gemini Flash 2.5)
 
 Este projeto é um **assistente de análise de dados CSV** que realiza **EDA (Exploração de Dados)** de forma interativa.  
