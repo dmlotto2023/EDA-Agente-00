@@ -55,6 +55,8 @@ pip install -r requirements.txt
 4. Crie um arquivo `.env` na raiz do projeto e adicione sua chave do Gemini:
 
 ```env
+O Uso desse campo seria apenas para uma redundância, porque a página do agente 
+já a solicita.
 GEMINI_API_KEY=sua_chave_aqui
 ```
 
@@ -77,7 +79,12 @@ python -m streamlit run app.py
 
 ## 🧭 Como usar
 
-1. Faça upload de um arquivo CSV  
+1. Insira sua API Key no primeiro campo da página
+2. Faça upload de um arquivo CSV  
+3. Gere a Análise inicial. Ela tem como principal objetivo gerar uma análise padronizada
+para auxiliar nas respostas, trazendo maior estabilidade.
+4. Você tem a opção de mostrar ou não essa análise, mas dependendo do tamanho do dataset
+pode não ser vantajoso mostrá-la porque pode sobrecarregar a tela.
 2. Digite uma pergunta em linguagem natural (ex.: *"Quais são as colunas disponíveis?"*)  
 3. O agente irá:
    - Gerar um raciocínio (Thought)  
@@ -95,6 +102,7 @@ Além do chat, você pode explorar manualmente os dados:
 - Selecionar colunas
 - Gerar histogramas para variáveis numéricas
 - Gerar gráficos de barras para variáveis categóricas
+- Identificar outliers
 
 ---
 
@@ -117,7 +125,7 @@ csv-agent/
 - [Streamlit](https://streamlit.io/) → Interface web interativa  
 - [Pandas](https://pandas.pydata.org/) → Manipulação de dados  
 - [Plotly](https://plotly.com/python/) → Visualizações interativas  
-- [Google Generative AI](https://ai.google.dev/) → Gemini Flash 2.5 para interpretação de linguagem natural  
+- [Google Generative AI](https://ai.google.dev/) → Gemini Flash 2.0  para interpretação de linguagem natural  
 
 ---
 

@@ -10,6 +10,15 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
+#####################
+# Campo para o usuário inserir a API Key
+gemini_api_key = st.text_input("🔑 Insira sua Gemini API Key", type="password")
+
+# Se o usuário forneceu a chave, armazenamos na sessão
+if gemini_api_key:
+    st.session_state["gemini_api_key"] = gemini_api_key
+####################
+
 def analise_inicial(df):
     resultados = []
 

@@ -13,8 +13,26 @@ import plotly.express as px
 from plotly.graph_objs import Figure as PlotlyFigure
 from matplotlib.figure import Figure as MplFigure
 
+#função anterior
+#load_dotenv()
+#genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+###########################
+#nova função para chamar api key
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+def configurar_gemini():
+    # Primeiro tenta pegar da sessão (inserida pelo usuário no app.py)
+    api_key = st.session_state.get("gemini_api_key")
+    if not api_key:
+        # Se não tiver, usa a do .env como fallback
+        api_key = os.getenv("GEMINI_API_KEY")
+
+    if api_key:
+        genai.configure(api_key=api_key)
+    else:
+        raise ValueError("Nenhuma API Key do Gemini foi definida.")
+############################
 
 AMPLAS = [
     "todas", "todos", "cada", "tudo", "geral", "completo",
@@ -82,6 +100,8 @@ def execute_code(code, df):
 # Agente Generalista
 # -------------------------------
 def agente_generalista(query, df):
+    configurar_gemini()  # garante que a chave está configurada
+
     analise = st.session_state.get("analise_inicial_resultados", [])
     prompt = f"""
 Você é um analista de dados generalista.
@@ -106,6 +126,8 @@ Regras:
 # Agente Específico
 # -------------------------------
 def agente_especifico(query, df):
+    configurar_gemini()  # garante que a chave está configurada
+
     prompt = f"""
 Você é um analista de dados específico.
 Pergunta: {query}
