@@ -118,7 +118,7 @@ Regras:
 - Nunca invente dados ou use pd.read_csv.
 - Sempre finalize o código com: result = fig
 """
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return generate_structured_response(query, response.text, df)
 
@@ -141,7 +141,7 @@ Regras:
 - Nunca invente dados ou use pd.read_csv.
 - Sempre finalize com: result = fig
 """
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return generate_structured_response(query, response.text, df)
 
